@@ -1,0 +1,193 @@
+/* =========================================
+   FAVICON + BRAND ICON STYLING
+   Unique Perspective 8
+========================================= */
+
+/* 
+NOTE:
+Favicons themselves cannot be heavily styled with CSS
+because browsers render them separately.
+
+This CSS styles:
+- browser/app icons
+- pinned tab icons
+- mobile icons
+- branding icon containers
+*/
+
+/* =========================================
+   BRAND ICON VARIABLES
+========================================= */
+
+:root{
+  --fav-black:#050505;
+  --fav-gold:#d4af37;
+  --fav-gold-light:#f4dc8c;
+  --fav-silver:#c0c0c0;
+}
+
+/* =========================================
+   SITE ICON CONTAINER
+========================================= */
+
+.site-icon{
+  width:64px;
+  height:64px;
+  border-radius:18px;
+
+  background:
+    linear-gradient(
+      145deg,
+      #111,
+      #050505
+    );
+
+  border:1px solid rgba(212,175,55,0.25);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  box-shadow:
+    0 0 25px rgba(212,175,55,0.15),
+    inset 0 0 12px rgba(255,255,255,0.03);
+
+  transition:0.35s ease;
+}
+
+/* HOVER */
+
+.site-icon:hover{
+  transform:translateY(-4px) scale(1.03);
+
+  box-shadow:
+    0 0 40px rgba(212,175,55,0.3),
+    inset 0 0 18px rgba(255,255,255,0.05);
+}
+
+/* =========================================
+   ICON IMAGE
+========================================= */
+
+.site-icon img{
+  width:70%;
+  height:auto;
+  object-fit:contain;
+
+  filter:
+    drop-shadow(0 0 10px rgba(212,175,55,0.35));
+}
+
+/* =========================================
+   GOLD INFINITY / 8 ICON
+========================================= */
+
+.infinity-icon{
+  font-size:2rem;
+  font-weight:700;
+
+  color:var(--fav-gold);
+
+  font-family:'Cormorant Garamond', serif;
+
+  text-shadow:
+    0 0 10px rgba(212,175,55,0.45),
+    0 0 25px rgba(212,175,55,0.2);
+}
+
+/* =========================================
+   MOBILE APP STYLE ICON
+========================================= */
+
+.app-icon{
+  width:96px;
+  height:96px;
+
+  border-radius:24px;
+
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(212,175,55,0.18),
+      transparent 60%
+    ),
+    linear-gradient(
+      180deg,
+      #111,
+      #050505
+    );
+
+  border:1px solid rgba(212,175,55,0.2);
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  overflow:hidden;
+}
+
+/* =========================================
+   METALLIC EFFECT
+========================================= */
+
+.metallic-gold{
+  background:
+    linear-gradient(
+      135deg,
+      #7a5c12 0%,
+      #d4af37 25%,
+      #f4dc8c 50%,
+      #d4af37 75%,
+      #7a5c12 100%
+    );
+
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+/* =========================================
+   ICON GLOW EFFECT
+========================================= */
+
+.icon-glow{
+  position:relative;
+}
+
+.icon-glow::before{
+  content:"";
+
+  position:absolute;
+  inset:-15px;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,0.22),
+      transparent 70%
+    );
+
+  z-index:-1;
+
+  filter:blur(16px);
+}
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media(max-width:768px){
+
+  .site-icon{
+    width:52px;
+    height:52px;
+  }
+
+  .app-icon{
+    width:80px;
+    height:80px;
+  }
+
+  .infinity-icon{
+    font-size:1.6rem;
+  }
+}
