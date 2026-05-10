@@ -1,0 +1,126 @@
+/* =========================================
+   LOGO.PNG STYLING
+   Unique Perspective 8
+========================================= */
+
+/* MAIN LOGO IMAGE */
+
+.logo-img{
+  width:180px;
+  height:auto;
+  object-fit:contain;
+  transition:0.4s ease;
+  filter:
+    drop-shadow(0 0 10px rgba(212,175,55,0.18))
+    brightness(1.02);
+}
+
+/* HOVER EFFECT */
+
+.logo-img:hover{
+  transform:scale(1.04);
+  filter:
+    drop-shadow(0 0 18px rgba(212,175,55,0.35))
+    brightness(1.08);
+}
+
+/* NAVBAR LOGO CONTAINER */
+
+.logo-container{
+  display:flex;
+  align-items:center;
+  gap:14px;
+  text-decoration:none;
+}
+
+/* OPTIONAL TEXT BESIDE LOGO */
+
+.logo-text{
+  font-family:'Cormorant Garamond', serif;
+  font-size:1.7rem;
+  letter-spacing:2px;
+  color:#d4af37;
+  font-weight:600;
+  text-transform:uppercase;
+}
+
+/* SMALL SILVER ACCENT */
+
+.logo-text span{
+  color:#c0c0c0;
+}
+
+/* HERO CENTERED LOGO */
+
+.hero-logo{
+  width:min(320px,70vw);
+  margin-bottom:35px;
+  animation:floatLogo 6s ease-in-out infinite;
+}
+
+/* FLOATING EFFECT */
+
+@keyframes floatLogo{
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+}
+
+/* GOLD GLOW BACKDROP */
+
+.logo-glow{
+  position:relative;
+  display:inline-block;
+}
+
+.logo-glow::before{
+  content:"";
+  position:absolute;
+  inset:-30px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(212,175,55,0.16),
+      transparent 70%
+    );
+  z-index:-1;
+  filter:blur(18px);
+}
+
+/* FOOTER LOGO */
+
+.footer-logo-img{
+  width:120px;
+  opacity:0.9;
+  transition:0.3s ease;
+}
+
+.footer-logo-img:hover{
+  opacity:1;
+  transform:scale(1.03);
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .logo-img{
+    width:140px;
+  }
+
+  .logo-text{
+    font-size:1.2rem;
+  }
+
+  .hero-logo{
+    width:220px;
+  }
+}
