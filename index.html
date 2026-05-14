@@ -1,432 +1,296 @@
-/* =========================================
-   UNIQUE PERSPECTIVE 8 — LUXURY HOMEPAGE CSS
-   Theme: Black • Gold • Silver
-   Style: High-End Mining / Jewelry / Modern
-========================================= */
-
-:root{
-  --bg:#050505;
-  --bg-soft:#0d0d0d;
-  --gold:#d4af37;
-  --gold-light:#f4dc8c;
-  --silver:#c0c0c0;
-  --white:#f5f5f5;
-  --gray:#888;
-  --border:rgba(212,175,55,0.18);
-
-  --font-title:'Cormorant Garamond', serif;
-  --font-body:'Inter', sans-serif;
-
-  --shadow:0 10px 40px rgba(0,0,0,0.5);
-  --radius:18px;
-  --transition:0.35s ease;
-}
-
-/* RESET */
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--bg);
-  color:var(--white);
-  font-family:var(--font-body);
-  overflow-x:hidden;
-  line-height:1.7;
-}
-
-/* BACKGROUND */
-
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:
-    radial-gradient(circle at top right,
-    rgba(212,175,55,0.08),
-    transparent 30%),
-    radial-gradient(circle at bottom left,
-    rgba(192,192,192,0.06),
-    transparent 25%);
-  z-index:-1;
-}
-
-/* NAVIGATION */
-
-header{
-  width:100%;
-  position:fixed;
-  top:0;
-  z-index:1000;
-  background:rgba(5,5,5,0.82);
-  backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);
-}
-
-.navbar{
-  max-width:1400px;
-  margin:auto;
-  padding:20px 40px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-}
-
-.logo{
-  font-family:var(--font-title);
-  font-size:2rem;
-  letter-spacing:2px;
-  color:var(--gold);
-  font-weight:600;
-}
-
-.logo span{
-  color:var(--silver);
-}
-
-.nav-links{
-  display:flex;
-  gap:35px;
-  list-style:none;
-}
-
-.nav-links a{
-  color:var(--white);
-  text-decoration:none;
-  font-size:0.95rem;
-  letter-spacing:1px;
-  transition:var(--transition);
-  position:relative;
-}
-
-.nav-links a::after{
-  content:"";
-  position:absolute;
-  left:0;
-  bottom:-8px;
-  width:0%;
-  height:1px;
-  background:var(--gold);
-  transition:var(--transition);
-}
-
-.nav-links a:hover{
-  color:var(--gold);
-}
-
-.nav-links a:hover::after{
-  width:100%;
-}
-
-/* HERO */
-
-.hero{
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  padding:160px 20px 120px;
-}
-
-.hero-content{
-  max-width:950px;
-}
-
-.hero-subtitle{
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:4px;
-  margin-bottom:20px;
-  font-size:0.85rem;
-}
-
-.hero h1{
-  font-family:var(--font-title);
-  font-size:clamp(3rem,8vw,7rem);
-  line-height:1;
-  margin-bottom:25px;
-  font-weight:600;
-}
-
-.hero h1 span{
-  color:var(--gold);
-}
-
-.hero p{
-  color:#d0d0d0;
-  font-size:1.15rem;
-  max-width:760px;
-  margin:auto;
-  margin-bottom:45px;
-}
-
-/* BUTTONS */
-
-.hero-buttons{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-}
-
-.btn{
-  padding:16px 34px;
-  border-radius:50px;
-  text-decoration:none;
-  font-weight:600;
-  letter-spacing:1px;
-  transition:var(--transition);
-  display:inline-block;
-}
-
-.btn-gold{
-  background:linear-gradient(
-    135deg,
-    var(--gold),
-    var(--gold-light)
-  );
-  color:#000;
-  box-shadow:0 8px 25px rgba(212,175,55,0.25);
-}
-
-.btn-gold:hover{
-  transform:translateY(-4px);
-}
-
-.btn-outline{
-  border:1px solid var(--gold);
-  color:var(--gold);
-}
-
-.btn-outline:hover{
-  background:var(--gold);
-  color:#000;
-}
-
-/* FEATURE SECTION */
-
-.features{
-  max-width:1400px;
-  margin:auto;
-  padding:100px 40px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
-}
-
-.feature-card{
-  background:linear-gradient(
-    180deg,
-    rgba(255,255,255,0.03),
-    rgba(255,255,255,0.01)
-  );
-  border:1px solid var(--border);
-  padding:40px;
-  border-radius:var(--radius);
-  transition:var(--transition);
-  backdrop-filter:blur(10px);
-  box-shadow:var(--shadow);
-}
-
-.feature-card:hover{
-  transform:translateY(-10px);
-  border-color:rgba(212,175,55,0.45);
-}
-
-.feature-number{
-  font-size:2rem;
-  color:var(--gold);
-  margin-bottom:18px;
-  font-weight:700;
-}
-
-.feature-card h3{
-  font-size:1.5rem;
-  margin-bottom:18px;
-  font-family:var(--font-title);
-}
-
-.feature-card p{
-  color:#c2c2c2;
-}
-
-/* COLLECTION SHOWCASE */
-
-.collection{
-  padding:120px 40px;
-  text-align:center;
-}
-
-.section-title{
-  font-family:var(--font-title);
-  font-size:3rem;
-  margin-bottom:20px;
-}
-
-.section-title span{
-  color:var(--gold);
-}
-
-.section-text{
-  max-width:760px;
-  margin:auto;
-  color:#bbb;
-  margin-bottom:70px;
-}
-
-.collection-grid{
-  max-width:1400px;
-  margin:auto;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:30px;
-}
-
-.collection-card{
-  position:relative;
-  overflow:hidden;
-  border-radius:var(--radius);
-  min-height:420px;
-  background:#111;
-  border:1px solid var(--border);
-}
-
-.collection-card img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:1s ease;
-}
-
-.collection-card:hover img{
-  transform:scale(1.08);
-}
-
-.collection-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    to top,
-    rgba(0,0,0,0.9),
-    transparent 60%
-  );
-  display:flex;
-  align-items:flex-end;
-  padding:30px;
-}
-
-.collection-overlay h3{
-  font-size:1.8rem;
-  font-family:var(--font-title);
-}
-
-/* ABOUT */
-
-.about{
-  max-width:1200px;
-  margin:auto;
-  padding:120px 40px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:70px;
-  align-items:center;
-}
-
-.about-image{
-  min-height:520px;
-  border-radius:var(--radius);
-  background:
-    linear-gradient(
-      rgba(0,0,0,0.2),
-      rgba(0,0,0,0.5)
-    ),
-    url('your-image.jpg') center/cover;
-  border:1px solid var(--border);
-}
-
-.about-content h2{
-  font-family:var(--font-title);
-  font-size:3rem;
-  margin-bottom:25px;
-}
-
-.about-content h2 span{
-  color:var(--gold);
-}
-
-.about-content p{
-  color:#c8c8c8;
-  margin-bottom:25px;
-}
-
-/* FOOTER */
-
-footer{
-  border-top:1px solid var(--border);
-  padding:50px 20px;
-  text-align:center;
-  background:#070707;
-}
-
-.footer-logo{
-  font-family:var(--font-title);
-  color:var(--gold);
-  font-size:2rem;
-  margin-bottom:15px;
-}
-
-footer p{
-  color:#888;
-  font-size:0.95rem;
-}
-
-/* SCROLLBAR */
-
-::-webkit-scrollbar{
-  width:10px;
-}
-
-::-webkit-scrollbar-track{
-  background:#111;
-}
-
-::-webkit-scrollbar-thumb{
-  background:linear-gradient(
-    var(--gold),
-    #8a6a14
-  );
-  border-radius:20px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-  .navbar{
-    padding:20px;
-  }
-
-  .nav-links{
-    display:none;
-  }
-
-  .hero{
-    padding-top:140px;
-  }
-
-  .about{
-    grid-template-columns:1fr;
-  }
-
-  .section-title{
-    font-size:2.4rem;
-  }
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home | Unique Perspective</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="banner">🚚 Free shipping on orders over $75 &nbsp;|&nbsp; ✦ Raw Origins. Refined Craft. Ready to Ship.</div>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-icon">◈</span>
+      <span class="logo-text">Unique<br>Perspective</span>
+    </a>
+    <nav><a href="index.html" class="active">Home</a><a href="shop.html">Shop</a><a href="minerals.html">Minerals</a><a href="blog.html">Blog</a><a href="about.html">About</a><a href="services.html">Services</a><a href="contact.html">Contact</a></nav>
+    <a href="shop.html" class="btn-header">Shop Now</a>
+  </div>
+</header>
+<main>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Fall 7, Stand Up 8</div>
+    <h1>From <span>Earth</span> to Soul</h1>
+    <p>Deeply sourced, divinely crafted. Unique Perspective brings you small-batch mining finds, handcrafted jewelry, sustainable living essentials, and curated pet accessories.</p>
+    <div class="hero-buttons">
+      <a href="shop.html" class="btn btn-primary">Explore the Shop</a>
+      <a href="about.html" class="btn btn-outline" style="color:#c0a880;border-color:#c0a880">Our Story</a>
+    </div>
+  </div>
+</section>
+
+<div class="features-strip">
+  <div class="feature-item"><div class="icon">⛏️</div><h4>Hand-Mined</h4><p>Stones sourced with care</p></div>
+  <div class="feature-item"><div class="icon">✋</div><h4>Handcrafted</h4><p>Jewelry made by hand</p></div>
+  <div class="feature-item"><div class="icon">🌿</div><h4>Eco-Friendly</h4><p>Sustainable products</p></div>
+  <div class="feature-item"><div class="icon">🚚</div><h4>Fast Shipping</h4><p>Ready to ship today</p></div>
+  <div class="feature-item"><div class="icon">💬</div><h4>Real Support</h4><p>Always a human here</p></div>
+</div>
+
+<section class="bg-cream">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow">Our Collections</div>
+      <h2>Shop by Category</h2>
+      <p>From pet companions to planet-friendly picks &mdash; something meaningful for every lifestyle.</p>
+    </div>
+    <div class="cat-section">
+    <h2>🐾 Pet Accessories</h2>
+    <div class="product-grid"><div class="product-card">
+      <div class="product-img">🐾</div>
+      <div class="product-body">
+        <div class="product-category">Pet Accessories</div>
+        <div class="product-title">Outward Hound Dog Brick Interactive Treat Puzzle Enrichment Toy</div>
+        <div class="product-desc">Keep your dog mentally stimulated and entertained with this Level 2 intermediate interactive treat puzzle. The Dog Brick...</div>
+        <div class="product-footer">
+          <span class="product-price">$14.99</span>
+          <a href="shop.html#pet-accessories" class="product-buy">View</a>
+        </div>
+      </div>
+    </div><div class="product-card">
+      <div class="product-img">🐾</div>
+      <div class="product-body">
+        <div class="product-category">Pet Accessories</div>
+        <div class="product-title">Veken 95oz/2.8L Automatic Pet Water Fountain with Triple Filtration</div>
+        <div class="product-desc">Keep your cats and dogs hydrated with this ultra-quiet automatic water fountain featuring a triple filtration system. Th...</div>
+        <div class="product-footer">
+          <span class="product-price">$29.99</span>
+          <a href="shop.html#pet-accessories" class="product-buy">View</a>
+        </div>
+      </div>
+    </div><div class="product-card">
+      <div class="product-img">🐾</div>
+      <div class="product-body">
+        <div class="product-category">Pet Accessories</div>
+        <div class="product-title">Big Barker 7-Inch Orthopedic Dog Bed with Headrest for Large Dogs</div>
+        <div class="product-desc">Give your large dog the restorative sleep they deserve with this therapeutic orthopedic dog bed. Engineered with 7 inche...</div>
+        <div class="product-footer">
+          <span class="product-price">$149.95</span>
+          <a href="shop.html#pet-accessories" class="product-buy">View</a>
+        </div>
+      </div>
+    </div></div>
+    <p style="text-align:center;margin-top:1.5rem"><a href="shop.html#pet-accessories" class="btn btn-outline">See All Pet Accessories</a></p>
+  </div><div class="cat-section">
+    <h2>🌿 Eco-Friendly Home</h2>
+    <div class="product-grid"><div class="product-card">
+      <div class="product-img">🌿</div>
+      <div class="product-body">
+        <div class="product-category">Eco-Friendly Home</div>
+        <div class="product-title">Bee&#x27;s Wrap Organic Beeswax Food Wraps — Set of 3 Reusable Food Storage Wraps</div>
+        <div class="product-desc">Say goodbye to single-use plastic wrap with Bee&#x27;s Wrap — the original, award-winning reusable beeswax food wrap. Made fr...</div>
+        <div class="product-footer">
+          <span class="product-price">$18.99</span>
+          <a href="shop.html#eco-friendly-home" class="product-buy">View</a>
+        </div>
+      </div>
+    </div><div class="product-card">
+      <div class="product-img">🌿</div>
+      <div class="product-body">
+        <div class="product-category">Eco-Friendly Home</div>
+        <div class="product-title">Full Circle Bamboo Dish Brush Set with Replaceable Heads — 3 Pack</div>
+        <div class="product-desc">Clean your dishes sustainably with this bamboo dish brush set. The ergonomic bamboo handle is naturally antimicrobial an...</div>
+        <div class="product-footer">
+          <span class="product-price">$12.99</span>
+          <a href="shop.html#eco-friendly-home" class="product-buy">View</a>
+        </div>
+      </div>
+    </div><div class="product-card">
+      <div class="product-img">🌿</div>
+      <div class="product-body">
+        <div class="product-category">Eco-Friendly Home</div>
+        <div class="product-title">Stasher Platinum Silicone Reusable Food Storage Bags — Set of 4</div>
+        <div class="product-desc">Replace single-use plastic zip bags with Stasher — the original reusable silicone food bag. Made from pure platinum food...</div>
+        <div class="product-footer">
+          <span class="product-price">$39.99</span>
+          <a href="shop.html#eco-friendly-home" class="product-buy">View</a>
+        </div>
+      </div>
+    </div></div>
+    <p style="text-align:center;margin-top:1.5rem"><a href="shop.html#eco-friendly-home" class="btn btn-outline">See All Eco-Friendly Home</a></p>
+  </div><div class="cat-section">
+    <h2>♻️ Sustainable Living</h2>
+    <div class="product-grid"><div class="product-card">
+      <div class="product-img">♻️</div>
+      <div class="product-body">
+        <div class="product-category">Sustainable Living</div>
+        <div class="product-title">Premium Stainless Steel Reusable Straws Set — 12 Straws with Cleaning Brushes</div>
+        <div class="product-desc">Make the switch from single-use plastic straws with this comprehensive set of premium stainless steel reusable straws. M...</div>
+        <div class="product-footer">
+          <span class="product-price">$15.99</span>
+          <a href="shop.html#sustainable-living" class="product-buy">View</a>
+        </div>
+      </div>
+    </div><div class="product-card">
+      <div class="product-img">♻️</div>
+      <div class="product-body">
+        <div class="product-category">Sustainable Living</div>
+        <div class="product-title">WooBamboo Organic Bamboo Toothbrush Set — 12 Pack with Charcoal-Infused Bristles</div>
+        <div class="product-desc">Replace your plastic toothbrush with this set of sustainably crafted bamboo toothbrushes. The handles are made from Moso...</div>
+        <div class="product-footer">
+          <span class="product-price">$19.99</span>
+          <a href="shop.html#sustainable-living" class="product-buy">View</a>
+        </div>
+      </div>
+    </div><div class="product-card">
+      <div class="product-img">♻️</div>
+      <div class="product-body">
+        <div class="product-category">Sustainable Living</div>
+        <div class="product-title">BigBlue 28W Solar Charger — Foldable USB Solar Panel for Camping and Outdoors</div>
+        <div class="product-desc">Harness clean solar energy to charge your devices anywhere. The BigBlue 28W portable solar charger uses highly efficient...</div>
+        <div class="product-footer">
+          <span class="product-price">$59.99</span>
+          <a href="shop.html#sustainable-living" class="product-buy">View</a>
+        </div>
+      </div>
+    </div></div>
+    <p style="text-align:center;margin-top:1.5rem"><a href="shop.html#sustainable-living" class="btn btn-outline">See All Sustainable Living</a></p>
+  </div><div class="cat-section">
+    <h2>💎 Homemade Jewelry</h2>
+    <div class="product-grid"><div class="product-card">
+      <div class="product-img">💎</div>
+      <div class="product-body">
+        <div class="product-category">Homemade Jewelry</div>
+        <div class="product-title">LET&#x27;S RESIN Jewelry Resin Molds Set — 32 Pieces Silicone Molds for Earrings, Pendants, and Rings</div>
+        <div class="product-desc">Create stunning resin jewelry with this comprehensive 32-piece silicone mold set from LET&#x27;S RESIN. The premium food-grad...</div>
+        <div class="product-footer">
+          <span class="product-price">$16.99</span>
+          <a href="shop.html#homemade-jewelry" class="product-buy">View</a>
+        </div>
+      </div>
+    </div><div class="product-card">
+      <div class="product-img">💎</div>
+      <div class="product-body">
+        <div class="product-category">Homemade Jewelry</div>
+        <div class="product-title">Jewelry Making Kit for Adults — 1500+ Pieces Beading &amp;amp; Wire Wrapping Supplies with Tools</div>
+        <div class="product-desc">Everything you need to make beautiful handmade jewelry in one comprehensive kit. This 1500+ piece jewelry making kit is ...</div>
+        <div class="product-footer">
+          <span class="product-price">$32.99</span>
+          <a href="shop.html#homemade-jewelry" class="product-buy">View</a>
+        </div>
+      </div>
+    </div><div class="product-card">
+      <div class="product-img">💎</div>
+      <div class="product-body">
+        <div class="product-category">Homemade Jewelry</div>
+        <div class="product-title">Beadnova Wire Wrapping Jewelry Pliers Set — 6 Piece Professional Jewelry Making Tool Kit</div>
+        <div class="product-desc">Craft professional-quality wire-wrapped jewelry with this 6-piece pliers set from Beadnova. Each tool in this set is pre...</div>
+        <div class="product-footer">
+          <span class="product-price">$24.99</span>
+          <a href="shop.html#homemade-jewelry" class="product-buy">View</a>
+        </div>
+      </div>
+    </div></div>
+    <p style="text-align:center;margin-top:1.5rem"><a href="shop.html#homemade-jewelry" class="btn btn-outline">See All Homemade Jewelry</a></p>
+  </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="eyebrow">From the Blog</div>
+      <h2>Explore Our World</h2>
+      <p>Travel posters, mining stories, and behind-the-scenes craft.</p>
+    </div>
+    <div class="blog-grid"><a href="blog/tofino-bc-travel-poster-variant-1.html" class="blog-card" style="text-decoration:none;color:inherit">
+      <div class="blog-img">🌊</div>
+      <div class="blog-body">
+        <div class="blog-meta">24 Feb 2026</div>
+        <div class="blog-title">Tofino, BC Travel Poster — Variant 1</div>
+        <div class="blog-excerpt">Tofino is where the ancient rainforest meets the raw power of the Pacific. Misty mornings, crashing surf, and endless sk...</div>
+      </div>
+    </a><a href="blog/tofino-bc-travel-poster-variant-2.html" class="blog-card" style="text-decoration:none;color:inherit">
+      <div class="blog-img">🌊</div>
+      <div class="blog-body">
+        <div class="blog-meta">24 Feb 2026</div>
+        <div class="blog-title">Tofino, BC Travel Poster — Variant 2</div>
+        <div class="blog-excerpt">Tofino stands at the edge of the world, where towering old-growth cedars give way to endless Pacific swells. This dramat...</div>
+      </div>
+    </a><a href="blog/tofino-bc-travel-poster-variant-3.html" class="blog-card" style="text-decoration:none;color:inherit">
+      <div class="blog-img">🌊</div>
+      <div class="blog-body">
+        <div class="blog-meta">24 Feb 2026</div>
+        <div class="blog-title">Tofino, BC Travel Poster — Variant 3</div>
+        <div class="blog-excerpt">Tofino is one of Canada&#x27;s most treasured wild places — a small town cradled between Clayoquot Sound and the open Pacific...</div>
+      </div>
+    </a><a href="blog/tofino-bc-travel-poster-variant-4.html" class="blog-card" style="text-decoration:none;color:inherit">
+      <div class="blog-img">🌊</div>
+      <div class="blog-body">
+        <div class="blog-meta">24 Feb 2026</div>
+        <div class="blog-title">Tofino, BC Travel Poster — Variant 4</div>
+        <div class="blog-excerpt">Tofino holds a special magic at every hour — from golden dawns over Long Beach to moonlit tides crashing against sea sta...</div>
+      </div>
+    </a><a href="blog/ucluelet-bc-travel-poster-variant-1.html" class="blog-card" style="text-decoration:none;color:inherit">
+      <div class="blog-img">🏔️</div>
+      <div class="blog-body">
+        <div class="blog-meta">24 Feb 2026</div>
+        <div class="blog-title">Ucluelet, BC Travel Poster — Variant 1</div>
+        <div class="blog-excerpt">Ucluelet clings to the wild Pacific rim of Vancouver Island, where jagged rock formations stand guard against relentless...</div>
+      </div>
+    </a><a href="blog/ucluelet-bc-travel-poster-variant-2.html" class="blog-card" style="text-decoration:none;color:inherit">
+      <div class="blog-img">🏔️</div>
+      <div class="blog-body">
+        <div class="blog-meta">24 Feb 2026</div>
+        <div class="blog-title">Ucluelet, BC Travel Poster — Variant 2</div>
+        <div class="blog-excerpt">Ucluelet is where the Pacific makes itself known with full force — waves crashing over ancient basalt, mist rolling acro...</div>
+      </div>
+    </a></div>
+    <p style="text-align:center;margin-top:2rem"><a href="blog.html" class="btn btn-primary">View All Posts</a></p>
+  </div>
+</section>
+
+<div class="cta-section">
+  <h2>Made with Purpose. Shipped with Pride.</h2>
+  <p>Every order supports small-scale, independent craftsmanship. Thank you for choosing Unique Perspective.</p>
+  <a href="shop.html" class="btn btn-primary">Shop the Collection</a>
+</div>
+
+</main>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-icon">◈</span>
+      <strong>Unique Perspective</strong>
+      <p>Dug by hand. Crafted by heart.<br>Small mining, homemade jewelry &amp; curated drops.</p>
+    </div>
+    <div class="footer-links">
+      <h4>Shop</h4>
+      <a href="shop.html#pet-accessories">Pet Accessories</a>
+      <a href="shop.html#eco-friendly-home">Eco-Friendly Home</a>
+      <a href="shop.html#sustainable-living">Sustainable Living</a>
+      <a href="shop.html#homemade-jewelry">Homemade Jewelry</a>
+    </div>
+    <div class="footer-links">
+      <h4>Company</h4>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-links">
+      <h4>Legal</h4>
+      <a href="policies.html">Policies</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="cookies.html">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Unique Perspective &mdash; Morgan Sugg. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
