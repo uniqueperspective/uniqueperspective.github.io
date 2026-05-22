@@ -5,3 +5,18 @@ $container->addDefinitions([
 ]);
 
 $container->build();
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\DependencyInjection\Reference;
+
+$container = new ContainerBuilder();
+
+// Manual definition
+$container->register('mailer', Mailer::class)
+    ->addArgument('%mailer.transport%');
+
+// Or with autowiring (modern way)
+$container->register(Mailer::class)
+    ->setAutowired(true);
+
+// Fetch a service
+$mailer = $container->get(Mailer::class);
