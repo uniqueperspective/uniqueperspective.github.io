@@ -1,0 +1,7 @@
+$container = new \ElementorDeps\DI\ContainerBuilder();
+$container->addDefinitions([
+    Wordpress_Adapter_Interface::class => \ElementorDeps\DI\autowire(Wordpress_Adapter::class),
+    // Other services...
+]);
+
+$container->build();
